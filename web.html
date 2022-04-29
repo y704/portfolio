@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+ <style>
+
+:root {
+ --font-family:'Poppins', sans-serif;;
+ --normal-font: 400;
+ --bold-font: 700;
+ --bolder-font: 900;
+ --bg-color: #fcfcfc;
+ --primary-color: black;
+ --secondary-color: #ff7235;
+ --primary-shadow: #8b8eaf;
+ --secondary-shadow: #a17a69;
+ --bottom-margin: 0.5rem;
+ --bottom-margin-2: 1rem;
+ --line-height: 1.7rem;
+ --transition: 0.3s;
+}
+html {
+ scroll-behavior: smooth;
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+ul {
+ list-style-type: none;
+}
+a {
+ text-decoration: none;
+ color: var(--primary-color);
+}
+a:hover {
+ color: var(--secondary-color);
+}
+body {
+ font-family: var(--font-family);
+}
+.home{
+ display: flex;
+ background: url("home_page.jpg") no-repeat center;
+ height: 100vh;
+ color: rgba(0, 0, 0, 0.644);
+ min-height: 50px;
+ background-size: cover;
+ background-attachment: fixed;
+ font-family: 'Ubuntu', sans-serif;
+ 
+}
+.home .max-width{
+ width: 100%;
+ display: flex;
+}
+.home .max-width .row{
+ margin-right: 0;
+}
+.text-1{
+   padding-top: 10px;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 70px;
+    left: 500px;
+    line-height:1.6;
+    
+    
+    
+    text-align: center;
+    padding-top: 10px;
+  
+}
+.text-1 span{
+    color:rgb(0, 0, 0);
+    
+}
+
+
+.home .home-content .text-3 span{
+ color: crimson;
+ font-weight: 500;
+}
+nav {
+ position: sticky;
+ top: 0;
+ left: 0;
+ z-index: 1;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 1.5rem 3.5rem;
+ background-color: black;
+ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav h1 {
+ color: white;
+ font-family: 'Poppins', sans-serif;
+}
+nav a {
+ color: white;
+ transition: var(--transition);
+}
+nav a:hover {
+ color: var(--secondary-color);
+ border-bottom: 2px solid var(--secondary-color);
+}
+nav ul {
+ display: flex;
+ gap: 1.9rem;
+}
+nav ul li {
+ font-weight: var(--bold-font);
+}
+.burger-menu {
+ color: var(--primary-color);
+ font-size: 2rem;
+ border: 0;
+ background-color: transparent;
+ cursor: pointer;
+ display: none;
+}
+.hero {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2.5rem;
+ max-width: 50rem;
+ margin: auto;
+}
+.hero img {
+ height: 35rem;
+ width: 37.5rem;
+}
+.bio {
+ width: 25rem;
+ padding: 0.625rem;
+ border-radius: 10px;
+ box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+}
+.bio h1 {
+ margin-bottom: var(--bottom-margin);
+}
+.bio p {
+ line-height: var(--line-height);
+ padding: 0.3rem 0;
+}
+.skills {
+ max-width: 68.75rem;
+ margin: auto;
+ text-align: center;
+ margin-top: 1rem;
+}
+.skill-header {
+ margin-bottom: 1rem;
+}
+.skills-wrapper img {
+ padding: 1.25rem;
+}
+.icon {
+ width: 11.875rem;
+ height: 11.25rem;
+}
+.icon-card {
+ background-color: #fff;
+ border-radius: 11px;
+ box-shadow: 0 3px 10px var(--secondary-shadow);
+ padding: 20px;
+ margin: 10px;
+}
+.contact {
+ margin-top: 5rem;
+}
+.contact h2 {
+ text-align: center;
+ margin-bottom: var(--bottom-margin-2);
+}
+.contact-form-container {
+ max-width: 40.75rem;
+ margin: 0 auto;
+ padding: 0.938rem;
+ border-radius: 5px;
+ box-shadow: 0 3px 10px var(--secondary-shadow);
+}
+.contact-form-container label {
+ line-height: 2.7em;
+ font-weight: var(--bold-font);
+ color: var(--primary-color);
+}
+.contact-form-container textarea {
+ min-height: 6.25rem;
+ font-size: 14px;
+}
+.contact-form-container .input-field {
+ width: 100%;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ border-radius: 5px;
+ border: none;
+ border: 2px outset var(--primary-color);
+ font-size: 0.875rem;
+ outline: none;
+}
+.input-field::placeholder {
+ padding: 0.5rem;
+ color: var(--primary-color);
+}
+.submit-btn {
+ width: 100%;
+ padding: 10px;
+ margin: 10px 0;
+ background-color: #fff;
+ border: 2px solid var(--primary-color);
+ border-radius: 5px;
+ font-size: 1rem;
+ font-weight: var(--bold-font);
+ transition: var(--transition);
+}
+.submit-btn:hover {
+ background-color: var(--primary-color);
+ color: white;
+ border: 2px solid var(--primary-color);
+ cursor: pointer;
+}
+.socials {
+ display: flex;
+ flex-direction: column;
+ position: fixed;
+ right: 1%;
+ bottom: 50%;
+}
+.socicon {
+ width: 2rem;
+ height: 2rem;
+}
+footer {
+ background-color: var(--bg-color);
+ padding: 1.25rem;
+ text-align: center;
+ margin: 2rem 0 0;
+}
+.scroll-up {
+ position: fixed;
+ right: 0.5%;
+ bottom: 3%;
+ cursor: pointer;
+}
+.up-arrow {
+ width: 3rem;
+ height: 3rem;
+}
+.projects {
+ background-color: var(--bg-color);
+ padding: 32px 0;
+ margin-top: 2rem;
+}
+.project-pic {
+ width: 65%;
+ height: 60%;
+}
+.projects-container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.projects-title {
+ text-align: center;
+ margin-bottom: 1rem;
+}
+.project-container {
+ text-align: center;
+ width: 21.875rem;
+ padding: 1rem;
+}
+.project-container p {
+ padding: 0.4rem;
+}
+.project-title {
+ margin-bottom: var(--bottom-margin);
+}
+.project-details {
+ margin-bottom: var(--bottom-margin);
+}
+.project-card {
+ background-color: #fff;
+ border-radius: 11px;
+ box-shadow: 0 3px 10px var(--primary-shadow);
+ padding: 20px;
+ margin: 10px;
+}
+</style>
+<title>Varun Yepuri | Web Developer</title>
+</head>
+<body>
+<nav>
+ <h1>PORTFOLIO</h1>
+ <ul class="navigation">
+ <li><a href="#home" class="menu-btn">Home</a></li>
+ <li><a href="#about" class="nav-link">About</a></li>
+ <li><a href="#skills" class="nav-link">Skills</a></li>
+ <li><a href="#projects" class="nav-link">Projects</a></li>
+ <li><a href="#contact" class="nav-link">Contact</a></li>
+ </ul>
+ <button class="burger-menu" id="burger-menu">
+ <ion-icon class="bars" name="menu-outline"></ion-icon>
+ </button>
+</nav>
+ 
+<section class="home" id="home">
+ 
+ 
+ <div class="text-1"><br><center>Hello, My Name is<br><strong><span>Varun Yepuri</span></strong>  <br> and I'm a Student</center></div>
+ 
+ 
+ 
+
+</section>
+<br><br><br>
+ 
+<section class="hero" id="about">
+ <img
+ src="varun.jpg"
+ alt="varun"
+ loading="lazy"
+ class="hero-img"
+ />
+ <div class="bio animate__animated animate__shakeX">
+ <h2 class="bio-title">About Me</h2>
+ <p class="bio-text">
+ <h3>I'm Varun Yepuri</h3>
+ I live in <br><b>Eluru, Andhra pradesh</b><br> and
+ my Email is <b>mohan.manikantavarun2019@vitstudent.ac.in</b><br>
+ I'm currently pursing Mtech in Vellore institute of technology , wanna excel more as web 
+developer.with a year of experience work in web technogies domain can delivery quality work.
+ I started learning programming on my own from books ,computer and curiousity.I am now 
+specialized and fixing front end issues.
+ </p>
+ </div>
+</section>
+<section class="skills" id="skills">
+ <h2 class="skill-header"><br><br><br><br>My Top Skills</h2>
+ <div class="skills-wrapper">
+ <div class="first-set animate__animated animate__pulse">
+ <img
+ src="html.png"
+ alt="html"
+ loading="lazy"
+ class="icon icon-card"
+ />
+ <img
+ src="css.png"
+ alt="css"
+ loading="lazy"
+ class="icon icon-card"
+ />
+ <img
+ src="js.png"
+ alt="javascript"
+ loading="lazy"
+ class="icon icon-card"
+ />
+ </div>
+ <div class="second-set animate__animated animate__pulse">
+ <img
+ src="php.png"
+ alt="php"
+ loading="lazy"
+ class="icon icon-card"
+ />
+ <img
+ src="sql.png"
+ alt="my sql"
+ loading="lazy"
+ class="icon icon-card"
+ />
+ <img
+ src="py.png"
+ alt="python"
+ loading="lazy"
+ class="icon icon-card"
+ />
+ </div>
+ </div>
+</section>
+<section class="projects" id="projects">
+<br><br><br><br><br>
+ <h2 class="projects-title">Some of my Recent Projects</h2>
+ <div class="projects-container">
+ <div class="project-container project-card">
+ <img
+ src="htmlpro.jpg"
+ alt="html"
+ loading="lazy"
+ class="project-pic"
+ />
+ <h3 class="project-title">HTML project</h3>
+ <p class="project-details">
+ HTML form for ordering in pizza shop
+ </p>
+ <a href="#" target="_blank" class="project-link">Check it Out</a>
+ </div>
+ <div class="project-container project-card">
+ <img
+ src="jspro.jpg"
+ alt="javascript"
+ loading="lazy"
+ class="project-pic"
+ />
+ <h3 class="project-title">Javascript project</h3>
+ <p class="project-details">
+ NEW YEAR card using javascript
+ </p>
+ <a href="#" target="_blank" class="project-link">Check it Out</a>
+ </div>
+ <div class="project-container project-card">
+ <img
+ src="phppro.jpg"
+ alt="php"
+ loading="lazy"
+ class="project-pic"
+ />
+ <h3 class="project-title">PHP project</h3>
+ <p class="project-details">
+ PHP for preparing a web page
+ </p>
+ <a href="#" target="_blank" class="project-link">Check it Out</a>
+ </div>
+ </div>
+</section>
+<section class="contact" id="contact">
+<br><br>
+ <h2 align="center">Get In Touch With Me</h2>
+ <div class="contact-form-container">
+ <div class="contact-form">
+ <form action="" method="POST">
+ <div class="form-control">
+ <label for="name">Name</label>
+ <input
+ type="text"
+ id="name"
+ name="sender-name"
+ placeholder="Enter Your Name"
+ class="input-field"
+ required
+ />
+ </div>
+ <div class="form-control">
+ <label for="email">Email</label>
+ <input
+ type="email"
+ id="email"
+ name="sender-email"
+ placeholder="Enter Your Email"
+ class="input-field"
+ required
+ />
+ </div>
+ <div class="form-control">
+ <label for="message">Message</label>
+ <textarea
+ id="message"
+ cols="60"
+ rows="10"
+ placeholder="Enter Your Message"
+ name="message"
+ class="input-field"
+ required
+ ></textarea>
+ </div>
+ <input
+ type="submit"
+ value="send message"
+ id="submit-btn"
+ class="submit-btn"
+ />
+ </form>
+ </div>
+ </div>
+</section>
+<div class="socials">
+ <a href="https://twitter.com/yepuri_varun" target="_blank"
+ ><img
+ src="twitter.png"
+ alt="Twitter"
+ loading="lazy"
+ class="socicon"
+ /></a>
+ <a href="#" target="_blank"
+ ><img
+ src="insta.png"
+ alt="Instagram"
+ loading="lazy"
+ class="socicon"
+ /></a>
+ <a href="https://www.linkedin.com/in/varun-yepuri-a6182621b/" target="_blank"
+ ><img
+ src="linkedin.png"
+ alt="Linkedin"
+ loading="lazy"
+ class="socicon"
+ /></a>
+ <a href="https://www.facebook.com/yepuri.varun" target="_blank"
+ ><img src="fb.png" alt="Facebook" class="socicon"
+ /></a>
+</div>
+<i class="scroll-up" id="scroll-up"
+ ><img
+ src="up.png"
+ class="socicon up-arrow"
+ alt="scroll-up"
+ />
+</i>
+<script>
+const scrollUp = document.querySelector("#scroll-up");
+scrollUp.addEventListener("click", () => {
+ window.scrollTo({
+ top: 0,
+ left: 0,
+ behavior: "smooth",
+ });
+});
+</script>
+</body>
+</html>
